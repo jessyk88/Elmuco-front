@@ -1,5 +1,6 @@
 import { defaultThemes } from "react-data-table-component";
 
+
 export const customStyles = {
     header: {
         style: {
