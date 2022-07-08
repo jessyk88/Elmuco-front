@@ -14,7 +14,7 @@ export const LoginComponent = () => {
 				<div class="input_container">
 					<input class="input" placeholder="Usuario" id="input1"></input>
 					<input class="input" placeholder="Contraseña" type="password" id="input2"></input>
-					<button class="login_button" onClick={() => navigate('/usuario')}>
+					<button class="login_button" onClick={() => navigate('/catalogo')}>
 						Ingresar
 					</button>
 				</div>

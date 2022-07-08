@@ -17,21 +17,17 @@ const isSelected = (isSelected) => isSelected ? 'enabled' : 'disabled';
 
 const initialState = {
 	bill: false,
-	existence: true,
+	existence: false,
 	other: false
 }
 
-const NavigationComponent = () => {
+const NavigationComponent = ({pageActive}) => {
 
 	const navigate = useNavigate();
-
-	const [nav, setNavBar] = useState(initialState);
+	const nav ={...initialState, [pageActive]: true };
 
 	const setSelected = (objectToModify, pageToRender) => {
-		const object = setAllObjectsFalse(nav);
-		const newNav ={...object, [objectToModify]: true };
-		//navigate(pageToRender);
-		setNavBar(newNav);
+		navigate(pageToRender);
 	}
 
 
@@ -40,12 +36,10 @@ const NavigationComponent = () => {
 			<button class={`stock-button ${isSelected(nav.bill)}`} onClick={() => setSelected('bill','/faturacion')}>
 				Facturación
 			</button>
-			<button class={`stock-button ${isSelected(nav.existence)}`} onClick={() => setSelected('existence','/usuario')}>
+			<button class={`stock-button ${isSelected(nav.existence)}`} onClick={() => setSelected('existence','/catalogo')}>
 				Ver existencias
 			</button>
-			<button disabled class={`stock-button ${isSelected(nav.other)}`} onClick={() => setSelected('/other')}>
-				Otro
-			</button>
+	
 		</div>
 	)
 };

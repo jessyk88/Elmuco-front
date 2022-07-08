@@ -10,6 +10,7 @@ import {
 } from './Facturacion.utils';
 import { customStyles } from '../utils/utils';
 import DataTable from 'react-data-table-component';
+import { navNamesLabels } from '../navigation/Navigation.utils';
 import './Facturacion.Component.css';
 
 export const FacturacionComponent = () => {
@@ -17,7 +18,7 @@ export const FacturacionComponent = () => {
 		<>
 			<>
 				<HeaderComponent title={title} />
-				<NavigationComponent />
+				<NavigationComponent pageActive={navNamesLabels.bill} />
 				<div class="contenedor2">
 					<div class="logo-container2">
 						<img class="logo2" width="80" height="50" src={logo}></img>
@@ -32,13 +33,13 @@ export const FacturacionComponent = () => {
 						<div class="form-group row">
 							<label for="dateBill" class="col-sm-2 col-form-label">Fecha de Emisión: </label>
 							<div class="col-sm-10">
-								<input type="text" readonly class="form-control-plaintext" id="dateBill" value="29/10/2021" />
+								<input type="text" class="form-control-plaintext" id="dateBill" placeholder="29/10/2021" />
 							</div>
 						</div>
 						<div class="form-group row">
 							<label for="dateBill" class="col-sm-2 col-form-label">Nombre Completo: </label>
 							<div class="col-sm-10">
-								<input type="text" readonly class="form-control-plaintext" id="dateBill" value="Luis Hernado Suarez" />
+								<input type="text" class="form-control-plaintext" id="dateBill" placeholder="Luis Hernado Suarez" />
 							</div>
 						</div>
 					</form>
